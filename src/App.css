@@ -57,11 +57,29 @@ body {
     color: #F4EFE3;
     text-decoration: none;
     display: inline-block;
+        position: relative;
+
     transition: transform 0.2s ease, color 0.2s ease;
+}
+
+/* My underline in pencil effect */
+.landingPage a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: .5px;
+    width: 0;
+    height: 1px;
+    background-color: #FFF8E7;
+    transition: width 0.6s ease;
 }
 
 .landingPage a:hover {
     color: #FFF8E7;
     transform: scale(1.05);
-    text-shadow: 0 0 8px rgba(255, 248, 231, 0.35);
+    text-shadow: 0 0 8px rgba(173, 142, 70, 0.35);
+}
+
+.landingPage a:hover::after {
+    width: 100%;
 }
