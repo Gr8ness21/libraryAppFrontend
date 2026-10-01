@@ -51,3 +51,16 @@ body {
 .landingPage li:nth-child(2) {
   padding: 0;
 }
+
+.landingPage a {
+    color: #F4EFE3;
+    text-decoration: none;
+}
+
+.landingPage a:visited {
+    color: #F4EFE3;
+}
+
+.landingPage a:hover {
+    text-decoration: underline;
+}
