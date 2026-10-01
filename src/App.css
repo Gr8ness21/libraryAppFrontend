@@ -71,7 +71,7 @@ body {
     width: 0;
     height: 1px;
     background-color: #FFF8E7;
-    transition: width 0.6s ease;
+    transition: width 0.65s ease;
 }
 
 .landingPage a:hover {
