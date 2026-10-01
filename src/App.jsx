@@ -1,10 +1,17 @@
 import './App.css';
-import Landing from "./components/Landing.jsx"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Landing from "./components/Landing.jsx";
+import Bookshelf from "./components/Bookshelf.jsx"
 
 function App() {
   return (
     <>
-      <Landing />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/books" element={<Bookshelf />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
