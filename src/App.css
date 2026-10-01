@@ -1,0 +1,53 @@
+/* Reset CSS */
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Landing Page Styling */
+.landingPage {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #6F4E37;
+  color: #F4EFE3;
+  text-align: center;
+}
+
+.landingPage h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 700;
+  opacity: 0.8;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 3rem;
+  line-height: 1.2;
+  max-width: 900px;
+  padding: 2rem;
+  border-top: 1px solid #8c7a63;
+  border-bottom: 1px solid #8c7a63;
+}
+
+.landingPage ol {
+  list-style-type: upper-roman;
+  font-size: 1.4rem;
+  line-height: 2;
+  padding-left: 2.5rem;
+}
+
+.landingPage li {
+  padding-left: 0.5rem;
+}
+
+.landingPage li:nth-child(2) {
+  padding: 0;
+}
