@@ -1,9 +1,10 @@
-import './App.css'
+import './App.css';
+import Landing from "./components/Landing.jsx"
 
 function App() {
   return (
     <>
-      <h1>Library App</h1>
+      <Landing />
     </>
   )
 }
