@@ -52,15 +52,16 @@ body {
   padding: 0;
 }
 
-.landingPage a {
-    color: #F4EFE3;
-    text-decoration: none;
-}
-
+.landingPage a,
 .landingPage a:visited {
     color: #F4EFE3;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .landingPage a:hover {
-    text-decoration: underline;
+    color: #FFF8E7;
+    transform: scale(1.05);
+    text-shadow: 0 0 8px rgba(255, 248, 231, 0.35);
 }
