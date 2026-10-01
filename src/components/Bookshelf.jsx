@@ -1,32 +1,47 @@
-function Bookshelf({ books }) {
+import { useEffect, useState } from "react";
+
+function Bookshelf({}) {
+
+     const [books, setBooks] = useState([]);
+
+     useEffect(()=>{
+        fetch("http://localhost:1916/books/")
+            .then((response)=> response.json())
+            .then((data) => {
+                setBooks(data)
+            })
+            .catch((error)=> {
+                console.error("We had an issue making fetch happen: ", error)
+            });
+     }, []);
+
+
     return (
         <div>
             <h1>Bookshelf</h1>
             <h2>Your List of Books.</h2>
 
-            This will be a list of all books...
-
-            {/* <ul>
+            <ul>
                 {books.map((book) => (
                     <li key={book._id}>
                         <a href={`/books/${book._id}`}>
                             {book.title}
                         </a>
 
-                        <form>
+                        {/* <form>
                             <button type="submit">
                                 DELETE
                             </button>
-                        </form>
+                        </form> */}
 
-                        <a href={`/books/${book._id}/edit`}>
+                        {/* <a href={`/books/${book._id}/edit`}>
                             Edit
-                        </a>
+                        </a> */}
 
                         <br />
                     </li>
                 ))}
-            </ul> */}
+            </ul>
 
             <nav>
                 <a href="/books/new">Add a New Book</a>
