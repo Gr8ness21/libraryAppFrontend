@@ -17,6 +17,14 @@ function Landing() {
 
                 <li>New Addition to the Library</li>
                 {/* Link to "New Book" page */}
+
+                <li>Explore New Reads</li>
+                {/* Link to "Book Search" page */}
+
+                {/* This page will feature:
+                Filter by name and genre.
+                Best sellers/Popular.
+                button next to the books to add to your reading list. */}
             </ol>
         </div>
     )
