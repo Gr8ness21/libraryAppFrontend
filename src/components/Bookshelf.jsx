@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
-function Bookshelf({}) {
+function Bookshelf({ }) {
 
-     const [books, setBooks] = useState([]);
+    const [books, setBooks] = useState([]);
 
-     useEffect(()=>{
+    useEffect(() => {
         fetch("http://localhost:1916/books/")
-            .then((response)=> response.json())
+            .then((response) => response.json())
             .then((data) => {
                 setBooks(data)
             })
-            .catch((error)=> {
+            .catch((error) => {
                 console.error("We had an issue making fetch happen: ", error)
             });
-     }, []);
+    }, []);
 
 
     return (
@@ -24,9 +25,9 @@ function Bookshelf({}) {
             <ul>
                 {books.map((book) => (
                     <li key={book._id}>
-                        <a href={`/books/${book._id}`}>
+                        <Link to={`/books/${book._id}`}>
                             {book.title}
-                        </a>
+                        </Link>
 
                         {/* <form>
                             <button type="submit">
