@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function Landing() {
     return (
         <div className="landingPage">
-            <h1>Welcome To Your Personal Library App</h1>
+            <h1>Library App</h1>
             <ol>
                 <li>
                     <Link to="/books">

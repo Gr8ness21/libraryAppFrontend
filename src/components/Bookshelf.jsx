@@ -18,37 +18,41 @@ function Bookshelf({ }) {
 
 
     return (
-        <div>
-            <h1>Bookshelf</h1>
-            <h2>Your List of Books.</h2>
+        <div className="bookshelfPage">
 
-            <ul>
-                {books.map((book) => (
-                    <li key={book._id}>
-                        <Link to={`/books/${book._id}`}>
-                            {book.title}
+            <header className="bookshelfHeader">
+                <h1>Bookshelf</h1>
+                <p>Your List of Books</p>
+            </header>
+
+            <main className="bookshelf">
+
+                <div className="shelf">
+
+                    {books.map((book) => (
+                        <Link
+                            key={book._id}
+                            to={`/books/${book._id}`}
+                            className="book"
+                        >
+                            <span className="bookTitle">
+                                {book.title}
+                            </span>
                         </Link>
+                    ))}
 
-                        {/* <form>
-                            <button type="submit">
-                                DELETE
-                            </button>
-                        </form> */}
+                </div>
 
-                        {/* <a href={`/books/${book._id}/edit`}>
-                            Edit
-                        </a> */}
+            </main>
 
-                        <br />
-                    </li>
-                ))}
-            </ul>
-
-            <nav>
-                <a href="/books/new">Add a New Book</a>
+            <nav className="bookshelfNav">
+                <Link to="/books/new">
+                    + Add a New Book
+                </Link>
             </nav>
+
         </div>
-    )
+    );
 }
 
 export default Bookshelf;
