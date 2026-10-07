@@ -144,7 +144,7 @@ function BookDetails() {
                         />
 
                     </label>
-
+<br />
                     <label>
                         Author:
 
@@ -157,7 +157,7 @@ function BookDetails() {
                         />
 
                     </label>
-
+<br />
                     <label>
                         Completed:
 
@@ -189,16 +189,13 @@ function BookDetails() {
                 // VIEW MODE
                 <>
                     <h1>{book.title}</h1>
-
-                    <p>
+<hr />                    <p>
                         <strong>Author:</strong> {book.author}
                     </p>
-
                     <p>
                         <strong>Completed:</strong>{" "}
                         {book.completed ? "Yes" : "No"}
                     </p>
-
                     <div className="bookActions">
 
                         <button

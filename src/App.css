@@ -54,34 +54,34 @@ body {
 
 .landingPage a,
 .landingPage a:visited {
-    color: #F4EFE3;
-    text-decoration: none;
-    display: inline-block;
-        position: relative;
+  color: #F4EFE3;
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
 
-    transition: transform 0.2s ease, color 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 /* My underline in pencil effect */
 .landingPage a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: .5px;
-    width: 0;
-    height: 1px;
-    background-color: #FFF8E7;
-    transition: width 0.65s ease;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: .5px;
+  width: 0;
+  height: 1px;
+  background-color: #FFF8E7;
+  transition: width 0.65s ease;
 }
 
 .landingPage a:hover {
-    color: #FFF8E7;
-    transform: scale(1.05);
-    text-shadow: 0 0 8px rgba(173, 142, 70, 0.35);
+  color: #FFF8E7;
+  transform: scale(1.05);
+  text-shadow: 0 0 8px rgba(173, 142, 70, 0.35);
 }
 
 .landingPage a:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 
@@ -92,66 +92,62 @@ BOOK SHELF STYLING
 ================================ */
 
 .bookshelfPage {
-    min-height: 100vh;
-    padding: 4rem 2rem;
+  min-height: 100vh;
+  padding: 4rem 2rem;
 
-    background-color: #F1E6D0;
+  background-color: #F1E6D0;
 
-    color: #4A3424;
+  color: #4A3424;
 
-    font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 
-    position: relative;
+  position: relative;
 
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .bookshelfPage::before {
-    content: "";
+  content: "";
 
-    position: absolute;
+  position: absolute;
 
-    inset: 0;
+  inset: 0;
 
-    pointer-events: none;
+  pointer-events: none;
 
-    opacity: 0.12;
+  opacity: 0.12;
 
-    background-image:
-        radial-gradient(
-            circle at 20% 30%,
-            rgba(111, 78, 55, 0.5) 0,
-            transparent 25%
-        ),
-        radial-gradient(
-            circle at 80% 70%,
-            rgba(111, 78, 55, 0.4) 0,
-            transparent 20%
-        );
+  background-image:
+    radial-gradient(circle at 20% 30%,
+      rgba(111, 78, 55, 0.5) 0,
+      transparent 25%),
+    radial-gradient(circle at 80% 70%,
+      rgba(111, 78, 55, 0.4) 0,
+      transparent 20%);
 }
 
 .bookshelfPage::after {
-    content: "";
+  content: "";
 
-    position: absolute;
+  position: absolute;
 
-    width: 180px;
-    height: 180px;
+  width: 180px;
+  height: 180px;
 
-    top: 80px;
-    right: 8%;
+  top: 80px;
+  right: 8%;
 
-    border: 8px solid rgba(111, 78, 55, 0.12);
+  border: 8px solid rgba(111, 78, 55, 0.12);
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    transform: rotate(-12deg);
+  transform: rotate(-12deg);
 
-    box-shadow:
-        inset 0 0 20px rgba(111, 78, 55, 0.08),
-        0 0 10px rgba(111, 78, 55, 0.05);
+  box-shadow:
+    inset 0 0 20px rgba(111, 78, 55, 0.08),
+    0 0 10px rgba(111, 78, 55, 0.05);
 
-    pointer-events: none;
+  pointer-events: none;
 }
 
 
@@ -160,31 +156,31 @@ BOOK SHELF STYLING
 ========================= */
 
 .bookshelfHeader {
-    text-align: center;
+  text-align: center;
 
-    margin-bottom: 4rem;
+  margin-bottom: 4rem;
 }
 
 .bookshelfHeader h1 {
-    margin: 0;
+  margin: 0;
 
-    font-size: clamp(3rem, 7vw, 5rem);
+  font-size: clamp(3rem, 7vw, 5rem);
 
-    font-weight: 700;
+  font-weight: 700;
 
-    letter-spacing: 0.05em;
+  letter-spacing: 0.05em;
 
-    color: #4A3424;
+  color: #4A3424;
 }
 
 .bookshelfHeader p {
-    font-size: 1.4rem;
+  font-size: 1.4rem;
 
-    font-style: italic;
+  font-style: italic;
 
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 
-    color: #6F4E37;
+  color: #6F4E37;
 }
 
 
@@ -193,19 +189,19 @@ BOOK SHELF STYLING
 ========================= */
 
 .bookshelf {
-    width: min(1000px, 95%);
+  width: min(1000px, 95%);
 
-    margin: 0 auto;
+  margin: 0 auto;
 
-    padding: 2rem;
+  padding: 2rem;
 
-    background-color: #6F4E37;
+  background-color: #6F4E37;
 
-    border-radius: 12px;
+  border-radius: 12px;
 
-    box-shadow:
-        0 20px 40px rgba(0, 0, 0, 0.35),
-        inset 0 0 20px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.35),
+    inset 0 0 20px rgba(0, 0, 0, 0.25);
 }
 
 
@@ -214,25 +210,25 @@ BOOK SHELF STYLING
 ========================= */
 
 .shelf {
-    min-height: 350px;
+  min-height: 350px;
 
-    display: flex;
+  display: flex;
 
-    align-items: flex-end;
+  align-items: flex-end;
 
-    gap: 12px;
+  gap: 12px;
 
-    padding: 2rem 2rem 1rem;
+  padding: 2rem 2rem 1rem;
 
-    border-bottom: 18px solid #3E281B;
+  border-bottom: 18px solid #3E281B;
 
-    background-color: #553A27;
+  background-color: #553A27;
 
-    box-shadow:
-        inset 0 -10px 15px rgba(0, 0, 0, 0.3),
-        inset 0 10px 10px rgba(255, 255, 255, 0.05);
+  box-shadow:
+    inset 0 -10px 15px rgba(0, 0, 0, 0.3),
+    inset 0 10px 10px rgba(255, 255, 255, 0.05);
 
-    overflow-x: auto;
+  overflow-x: auto;
 }
 
 
@@ -241,39 +237,39 @@ BOOK SHELF STYLING
 ========================= */
 
 .book {
-    width: 65px;
+  width: 65px;
 
-    height: 240px;
+  height: 240px;
 
-    flex-shrink: 0;
+  flex-shrink: 0;
 
-    display: flex;
+  display: flex;
 
-    align-items: center;
+  align-items: center;
 
-    justify-content: center;
+  justify-content: center;
 
-    padding: 10px 6px;
+  padding: 10px 6px;
 
-    border-radius: 3px 6px 6px 3px;
+  border-radius: 3px 6px 6px 3px;
 
-    background-color: #8B5E3C;
+  background-color: #8B5E3C;
 
-    color: #F4EFE3;
+  color: #F4EFE3;
 
-    text-decoration: none;
+  text-decoration: none;
 
-    writing-mode: vertical-rl;
+  writing-mode: vertical-rl;
 
-    text-orientation: mixed;
+  text-orientation: mixed;
 
-    box-shadow:
-        3px 0 5px rgba(0, 0, 0, 0.3),
-        inset -5px 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    3px 0 5px rgba(0, 0, 0, 0.3),
+    inset -5px 0 5px rgba(0, 0, 0, 0.15);
 
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 
@@ -282,11 +278,11 @@ BOOK SHELF STYLING
 ========================= */
 
 .bookTitle {
-    font-size: 1rem;
+  font-size: 1rem;
 
-    letter-spacing: 0.05em;
+  letter-spacing: 0.05em;
 
-    text-align: center;
+  text-align: center;
 }
 
 
@@ -295,12 +291,12 @@ BOOK SHELF STYLING
 ========================= */
 
 .book:hover {
-    transform: translateY(-15px);
+  transform: translateY(-15px);
 
-    box-shadow:
-        5px 10px 15px rgba(0, 0, 0, 0.4);
+  box-shadow:
+    5px 10px 15px rgba(0, 0, 0, 0.4);
 
-    color: #FFF8E7;
+  color: #FFF8E7;
 }
 
 
@@ -309,29 +305,29 @@ BOOK SHELF STYLING
 ========================= */
 
 .bookshelfNav {
-    text-align: center;
+  text-align: center;
 
-    margin-top: 3rem;
+  margin-top: 3rem;
 }
 
 .bookshelfNav a {
-    color: #4A3424;
+  color: #4A3424;
 
-    font-size: 1.3rem;
+  font-size: 1.3rem;
 
-    text-decoration: none;
+  text-decoration: none;
 
-    border-bottom: 1px solid transparent;
+  border-bottom: 1px solid transparent;
 
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .bookshelfNav a:hover {
-    color: #6F4E37;
+  color: #6F4E37;
 
-    border-color: #6F4E37;
+  border-color: #6F4E37;
 }
 
 
@@ -346,27 +342,79 @@ BOOK DETAILS STYLING
 /* GOAL: book-like animation where the pages open to show details. */
 
 .bookDetails {
-    width: min(600px, 90%);
-    margin: 2rem auto;
-    padding: 2rem;
+  width: min(600px, 90%);
+  margin: 2rem auto;
+  padding: 2rem;
 
-    border: 2px solid #F4EFE3;
-    border-radius: 20px;
+  border: 2px solid #F4EFE3;
+  border-radius: 20px;
 
-    background-color: #5F432F;
-    color: #F4EFE3;
+  background-color: #5F432F;
+  color: #F4EFE3;
 
-    font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .bookDetails h1 {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 1.5rem;
 }
 
 .bookDetails p {
-    font-size: 1.2rem;
-    margin: 0.75rem 0;
+  font-size: 1.2rem;
+  margin: 0.75rem 0;
+}
+
+/* ICON STYLING */
+.bookActions {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bookAction {
+  width: 50px;
+  height: 50px;
+
+  padding: 8px;
+
+  border: 1px solid rgba(244, 239, 227, 0.5);
+  border-radius: 50%;
+
+  background-color: rgba(74, 52, 36, 0.75);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.bookAction img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+}
+
+/* Hover effect */
+
+.bookAction:hover {
+  transform: scale(1.15);
+
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.8),
+    0 0 18px rgba(255, 255, 255, 0.5);
 }
