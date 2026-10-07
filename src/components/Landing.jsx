@@ -7,7 +7,7 @@ function Landing() {
             <ol>
                 <li>
                     <Link to="/books">
-                        List of Completed Books
+                        Your Bookshelf - All Books
                     </Link>
                 </li>
                 {/* Link to filtered list of completed books. */}
