@@ -210,10 +210,11 @@ function BookDetails() {
                         </button>
 
                         <button
+                            className="bookAction deleteAction"
                             onClick={handleDelete}
                             aria-label="Delete book"
                         >
-                            🗑
+                            <img src={deleteIcon} alt="" />
                         </button>
 
                     </div>
