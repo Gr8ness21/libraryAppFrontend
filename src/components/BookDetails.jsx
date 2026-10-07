@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import editIcon from "../assets/editicon.jpeg";
+import deleteIcon from "../assets/trashicon.png";
 
 function BookDetails() {
 
@@ -200,10 +202,11 @@ function BookDetails() {
                     <div className="bookActions">
 
                         <button
+                            className="bookAction editAction"
                             onClick={() => setIsEditing(true)}
                             aria-label="Edit book"
                         >
-                            ✎
+                            <img src={editIcon} alt="" />
                         </button>
 
                         <button
