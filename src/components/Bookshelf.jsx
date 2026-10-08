@@ -20,6 +20,13 @@ function Bookshelf({ }) {
     return (
         <div className="bookshelfPage">
 
+            <Link
+                to="/"
+                className="returnToLibrary"
+            >
+                ← Return to Library
+            </Link>
+
             <header className="bookshelfHeader">
                 <h1>Bookshelf</h1>
                 <p>Your List of Books</p>

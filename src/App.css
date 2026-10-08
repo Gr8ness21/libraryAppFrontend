@@ -354,28 +354,26 @@ BOOK DETAILS STYLING
 } */
 
 .bookDetails {
-    position: relative;
-    width: 450px;
-    min-height: 500px;
-    padding: 3rem;
-    border: 2px solid #F4EFE3;
-    border-radius: 8px;
-    background-color: #5F432F;
-    color: #F4EFE3;
-    font-family: "Times New Roman", Times, serif;
-    box-shadow:0 20px 50px rgba(0, 0, 0, 0.45);
-    transform-origin: left center;
+  position: relative;
+  width: 450px;
+  min-height: 500px;
+  padding: 3rem;
+  border: 2px solid #F4EFE3;
+  border-radius: 8px;
+  background-color: #5F432F;
+  color: #F4EFE3;
+  font-family: "Times New Roman", Times, serif;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  transform-origin: left center;
 }
 
 .bookDetailsOverlay {
-    position: fixed;
-    inset: 0;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    z-index: 100;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
 }
 
 .bookDetails h1 {
@@ -438,4 +436,349 @@ BOOK DETAILS STYLING
   box-shadow:
     0 0 8px rgba(255, 255, 255, 0.8),
     0 0 18px rgba(255, 255, 255, 0.5);
+}
+
+/* open book detail animation */
+.bookDetails {
+  animation: openBook 0.6s ease-out forwards;
+}
+
+@keyframes openBook {
+
+  0% {
+    transform:
+      perspective(1200px) rotateY(-90deg) scale(0.8);
+
+    opacity: 0;
+  }
+
+  60% {
+    transform:
+      perspective(1200px) rotateY(10deg) scale(1.02);
+
+    opacity: 1;
+  }
+
+  100% {
+    transform:
+      perspective(1200px) rotateY(0deg) scale(1);
+
+    opacity: 1;
+  }
+
+}
+
+/* ====================
+NEW BOOK PAGE STYLING
+===================== */
+.newBookPage {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 3rem 1.5rem;
+
+    background-color: #6F4E37;
+
+    font-family: "Times New Roman", Times, serif;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.returnToLibrary {
+    position: absolute;
+
+    top: 2rem;
+    left: 2rem;
+
+    color: #F4EFE3;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 1.1rem;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.returnToLibrary:hover {
+    color: #FFF8E7;
+
+    transform: translateX(-4px);
+
+    text-shadow:
+        0 0 8px rgba(255, 248, 231, 0.4);
+}
+
+/* -------------------------
+   LIBRARY CARD
+------------------------- */
+
+.libraryCard {
+    width: min(600px, 90%);
+
+    padding: 3rem;
+
+    background-color: #F1E6D0;
+
+    color: #4A3424;
+
+    border: 1px solid #D6C29E;
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.35),
+        inset 0 0 35px rgba(111, 78, 55, 0.08);
+
+    position: relative;
+
+    transform: rotate(-0.5deg);
+}
+
+
+/* -------------------------
+   PAPER TEXTURE
+------------------------- */
+
+.libraryCard::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.15;
+
+    background-image:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(111, 78, 55, 0.4) 0,
+            transparent 20%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(111, 78, 55, 0.3) 0,
+            transparent 25%
+        );
+}
+
+
+/* -------------------------
+   HEADER
+------------------------- */
+
+.libraryCardHeader {
+    text-align: center;
+
+    position: relative;
+}
+
+.libraryName {
+    margin: 0 0 0.5rem;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.2em;
+
+    color: #6F4E37;
+}
+
+.libraryCardHeader h1 {
+    margin: 0;
+
+    font-size: clamp(2rem, 5vw, 3rem);
+
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+}
+
+.cardLine {
+    height: 1px;
+
+    background-color: #8B6B4A;
+
+    margin: 1.5rem 0 2.5rem;
+}
+
+
+/* -------------------------
+   FORM
+------------------------- */
+
+.libraryCardForm {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 1.8rem;
+}
+
+.libraryCardForm label {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.5rem;
+}
+
+.libraryCardForm label span {
+    font-size: 1rem;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.12em;
+
+    color: #5F432F;
+}
+
+
+/* -------------------------
+   INPUTS
+------------------------- */
+
+.libraryCardForm input[type="text"] {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 0.7rem 0.2rem;
+
+    border: none;
+
+    border-bottom: 1px solid #8B6B4A;
+
+    background-color: transparent;
+
+    color: #4A3424;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 1.25rem;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.libraryCardForm input[type="text"]:focus {
+    border-bottom-color: #4A3424;
+
+    box-shadow:
+        0 2px 0 rgba(74, 52, 36, 0.2);
+}
+
+
+/* -------------------------
+   COMPLETED CHECKBOX
+------------------------- */
+
+.completedField {
+    flex-direction: row !important;
+
+    align-items: center;
+
+    gap: 0.75rem !important;
+
+    margin-top: 0.5rem;
+}
+
+.completedField input {
+    width: 18px;
+    height: 18px;
+
+    accent-color: #6F4E37;
+}
+
+.completedField span {
+    font-size: 0.95rem !important;
+
+    font-weight: normal !important;
+
+    letter-spacing: 0.05em !important;
+
+    text-transform: none !important;
+}
+
+
+/* -------------------------
+   ADD BUTTON
+------------------------- */
+
+.libraryCardForm button {
+    align-self: center;
+
+    margin-top: 1rem;
+
+    padding: 0.8rem 2rem;
+
+    border: 1px solid #6F4E37;
+
+    border-radius: 2px;
+
+    background-color: #6F4E37;
+
+    color: #F4EFE3;
+
+    font-family: "Times New Roman", Times, serif;
+
+    font-size: 1rem;
+
+    letter-spacing: 0.1em;
+
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.libraryCardForm button:hover {
+    transform: translateY(-2px);
+
+    background-color: #4A3424;
+
+    box-shadow:
+        0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+/* -------------------------
+   FOOTER
+------------------------- */
+
+.libraryCardFooter {
+    position: relative;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 3rem;
+
+    padding-top: 1rem;
+
+    border-top: 1px solid #B79C78;
+
+    font-size: 0.7rem;
+
+    letter-spacing: 0.12em;
+
+    color: #8B6B4A;
 }

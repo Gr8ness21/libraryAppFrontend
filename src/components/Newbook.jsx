@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function NewBook() {
 
@@ -41,53 +42,106 @@ function NewBook() {
         }
     };
 
+
     return (
-        <div>
-            <h1>New Book Page</h1>
+        <div className="newBookPage">
 
-            <form onSubmit={handleSubmit}>
+            <Link
+                to="/"
+                className="returnToLibrary"
+            >
+                ← Return to Library
+            </Link>
 
-                <label>
-                    Title:
-                    <input
-                        type="text"
-                        name="title"
-                        value={title}
-                        onChange={(event) => setTitle(event.target.value)}
-                    />
-                </label>
+            <div className="libraryCard">
 
-                <br />
+                <header className="libraryCardHeader">
+                    <p className="libraryName">
+                        THE PERSONAL LIBRARY
+                    </p>
 
-                <label>
-                    Author:
-                    <input
-                        type="text"
-                        name="author"
-                        value={author}
-                        onChange={(event) => setAuthor(event.target.value)}
-                    />
-                </label>
+                    <h1>
+                        Library Catalog Card
+                    </h1>
 
-                <br />
+                    <div className="cardLine"></div>
+                </header>
 
-                <label>
-                    Completed:
-                    <input
-                        type="checkbox"
-                        name="completed"
-                        checked={completed}
-                        onChange={(event) => setCompleted(event.target.checked)}
-                    />
-                </label>
 
-                <br />
+                <form
+                    className="libraryCardForm"
+                    onSubmit={handleSubmit}
+                >
 
-                <button type="submit">
-                    Add Book
-                </button>
+                    <label>
+                        <span>Title</span>
 
-            </form>
+                        <input
+                            type="text"
+                            name="title"
+                            value={title}
+                            onChange={(event) =>
+                                setTitle(event.target.value)
+                            }
+                            required
+                        />
+                    </label>
+
+                    <br />
+                    <label>
+                        <span>Author</span>
+
+                        <input
+                            type="text"
+                            name="author"
+                            value={author}
+                            onChange={(event) =>
+                                setAuthor(event.target.value)
+                            }
+                            required
+                        />
+                    </label>
+                    <br />
+
+                    <label className="completedField">
+
+                        <input
+                            type="checkbox"
+                            name="completed"
+                            checked={completed}
+                            onChange={(event) =>
+                                setCompleted(event.target.checked)
+                            }
+                        />
+
+                        <span>
+                            Book has been completed
+                        </span>
+                        <br />
+
+                    </label>
+
+
+                    <button type="submit">
+                        Add to Library
+                    </button>
+
+                </form>
+
+
+                <footer className="libraryCardFooter">
+
+                    <span>
+                        CATALOG
+                    </span>
+
+                    <span>
+                        PERSONAL COLLECTION
+                    </span>
+
+                </footer>
+
+            </div>
         </div>
     );
 }
