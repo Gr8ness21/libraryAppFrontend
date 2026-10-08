@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import editIcon from "../assets/editicon.jpeg";
 import deleteIcon from "../assets/trashicon.png";
 
@@ -213,6 +214,10 @@ function BookDetails() {
                 ) : (
 
                     <>
+                        <Link to="/books" className="backToBookshelf">
+                            ← Back to Bookshelf
+                        </Link>
+                        
                         <h1>{book.title}</h1>
 
                         <p>

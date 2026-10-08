@@ -365,6 +365,7 @@ BOOK DETAILS STYLING
   font-family: "Times New Roman", Times, serif;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
   transform-origin: left center;
+  animation: openBook 0.6s ease-out forwards;
 }
 
 .bookDetailsOverlay {
@@ -374,6 +375,8 @@ BOOK DETAILS STYLING
   justify-content: center;
   align-items: center;
   z-index: 100;
+  background-color: rgba(35, 24, 16, 0.65);
+  backdrop-filter: blur(3px);
 }
 
 .bookDetails h1 {
@@ -384,6 +387,26 @@ BOOK DETAILS STYLING
 .bookDetails p {
   font-size: 1.2rem;
   margin: 0.75rem 0;
+}
+
+.backToBookshelf {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: #F4EFE3;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1rem;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+.backToBookshelf:hover {
+  color: #FFF8E7;
+  transform: translateX(-4px);
+  text-shadow:
+    0 0 8px rgba(255, 248, 231, 0.5);
 }
 
 /* ICON STYLING */
@@ -472,48 +495,48 @@ BOOK DETAILS STYLING
 NEW BOOK PAGE STYLING
 ===================== */
 .newBookPage {
-    min-height: 100vh;
+  min-height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    padding: 3rem 1.5rem;
+  padding: 3rem 1.5rem;
 
-    background-color: #6F4E37;
+  background-color: #6F4E37;
 
-    font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .returnToLibrary {
-    position: absolute;
+  position: absolute;
 
-    top: 2rem;
-    left: 2rem;
+  top: 2rem;
+  left: 2rem;
 
-    color: #F4EFE3;
+  color: #F4EFE3;
 
-    font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 
-    text-decoration: none;
+  text-decoration: none;
 
-    transition:
-        transform 0.2s ease,
-        color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
 }
 
 .returnToLibrary:hover {
-    color: #FFF8E7;
+  color: #FFF8E7;
 
-    transform: translateX(-4px);
+  transform: translateX(-4px);
 
-    text-shadow:
-        0 0 8px rgba(255, 248, 231, 0.4);
+  text-shadow:
+    0 0 8px rgba(255, 248, 231, 0.4);
 }
 
 /* -------------------------
@@ -521,23 +544,23 @@ NEW BOOK PAGE STYLING
 ------------------------- */
 
 .libraryCard {
-    width: min(600px, 90%);
+  width: min(600px, 90%);
 
-    padding: 3rem;
+  padding: 3rem;
 
-    background-color: #F1E6D0;
+  background-color: #F1E6D0;
 
-    color: #4A3424;
+  color: #4A3424;
 
-    border: 1px solid #D6C29E;
+  border: 1px solid #D6C29E;
 
-    box-shadow:
-        0 15px 30px rgba(0, 0, 0, 0.35),
-        inset 0 0 35px rgba(111, 78, 55, 0.08);
+  box-shadow:
+    0 15px 30px rgba(0, 0, 0, 0.35),
+    inset 0 0 35px rgba(111, 78, 55, 0.08);
 
-    position: relative;
+  position: relative;
 
-    transform: rotate(-0.5deg);
+  transform: rotate(-0.5deg);
 }
 
 
@@ -546,27 +569,23 @@ NEW BOOK PAGE STYLING
 ------------------------- */
 
 .libraryCard::before {
-    content: "";
+  content: "";
 
-    position: absolute;
+  position: absolute;
 
-    inset: 0;
+  inset: 0;
 
-    pointer-events: none;
+  pointer-events: none;
 
-    opacity: 0.15;
+  opacity: 0.15;
 
-    background-image:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(111, 78, 55, 0.4) 0,
-            transparent 20%
-        ),
-        radial-gradient(
-            circle at 85% 75%,
-            rgba(111, 78, 55, 0.3) 0,
-            transparent 25%
-        );
+  background-image:
+    radial-gradient(circle at 15% 20%,
+      rgba(111, 78, 55, 0.4) 0,
+      transparent 20%),
+    radial-gradient(circle at 85% 75%,
+      rgba(111, 78, 55, 0.3) 0,
+      transparent 25%);
 }
 
 
@@ -575,37 +594,37 @@ NEW BOOK PAGE STYLING
 ------------------------- */
 
 .libraryCardHeader {
-    text-align: center;
+  text-align: center;
 
-    position: relative;
+  position: relative;
 }
 
 .libraryName {
-    margin: 0 0 0.5rem;
+  margin: 0 0 0.5rem;
 
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 
-    letter-spacing: 0.2em;
+  letter-spacing: 0.2em;
 
-    color: #6F4E37;
+  color: #6F4E37;
 }
 
 .libraryCardHeader h1 {
-    margin: 0;
+  margin: 0;
 
-    font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2rem, 5vw, 3rem);
 
-    font-weight: 700;
+  font-weight: 700;
 
-    letter-spacing: 0.04em;
+  letter-spacing: 0.04em;
 }
 
 .cardLine {
-    height: 1px;
+  height: 1px;
 
-    background-color: #8B6B4A;
+  background-color: #8B6B4A;
 
-    margin: 1.5rem 0 2.5rem;
+  margin: 1.5rem 0 2.5rem;
 }
 
 
@@ -614,33 +633,33 @@ NEW BOOK PAGE STYLING
 ------------------------- */
 
 .libraryCardForm {
-    position: relative;
+  position: relative;
 
-    display: flex;
+  display: flex;
 
-    flex-direction: column;
+  flex-direction: column;
 
-    gap: 1.8rem;
+  gap: 1.8rem;
 }
 
 .libraryCardForm label {
-    display: flex;
+  display: flex;
 
-    flex-direction: column;
+  flex-direction: column;
 
-    gap: 0.5rem;
+  gap: 0.5rem;
 }
 
 .libraryCardForm label span {
-    font-size: 1rem;
+  font-size: 1rem;
 
-    font-weight: 700;
+  font-weight: 700;
 
-    text-transform: uppercase;
+  text-transform: uppercase;
 
-    letter-spacing: 0.12em;
+  letter-spacing: 0.12em;
 
-    color: #5F432F;
+  color: #5F432F;
 }
 
 
@@ -649,36 +668,36 @@ NEW BOOK PAGE STYLING
 ------------------------- */
 
 .libraryCardForm input[type="text"] {
-    width: 100%;
+  width: 100%;
 
-    box-sizing: border-box;
+  box-sizing: border-box;
 
-    padding: 0.7rem 0.2rem;
+  padding: 0.7rem 0.2rem;
 
-    border: none;
+  border: none;
 
-    border-bottom: 1px solid #8B6B4A;
+  border-bottom: 1px solid #8B6B4A;
 
-    background-color: transparent;
+  background-color: transparent;
 
-    color: #4A3424;
+  color: #4A3424;
 
-    font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 
-    font-size: 1.25rem;
+  font-size: 1.25rem;
 
-    outline: none;
+  outline: none;
 
-    transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .libraryCardForm input[type="text"]:focus {
-    border-bottom-color: #4A3424;
+  border-bottom-color: #4A3424;
 
-    box-shadow:
-        0 2px 0 rgba(74, 52, 36, 0.2);
+  box-shadow:
+    0 2px 0 rgba(74, 52, 36, 0.2);
 }
 
 
@@ -687,30 +706,30 @@ NEW BOOK PAGE STYLING
 ------------------------- */
 
 .completedField {
-    flex-direction: row !important;
+  flex-direction: row !important;
 
-    align-items: center;
+  align-items: center;
 
-    gap: 0.75rem !important;
+  gap: 0.75rem !important;
 
-    margin-top: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .completedField input {
-    width: 18px;
-    height: 18px;
+  width: 18px;
+  height: 18px;
 
-    accent-color: #6F4E37;
+  accent-color: #6F4E37;
 }
 
 .completedField span {
-    font-size: 0.95rem !important;
+  font-size: 0.95rem !important;
 
-    font-weight: normal !important;
+  font-weight: normal !important;
 
-    letter-spacing: 0.05em !important;
+  letter-spacing: 0.05em !important;
 
-    text-transform: none !important;
+  text-transform: none !important;
 }
 
 
@@ -719,43 +738,43 @@ NEW BOOK PAGE STYLING
 ------------------------- */
 
 .libraryCardForm button {
-    align-self: center;
+  align-self: center;
 
-    margin-top: 1rem;
+  margin-top: 1rem;
 
-    padding: 0.8rem 2rem;
+  padding: 0.8rem 2rem;
 
-    border: 1px solid #6F4E37;
+  border: 1px solid #6F4E37;
 
-    border-radius: 2px;
+  border-radius: 2px;
 
-    background-color: #6F4E37;
+  background-color: #6F4E37;
 
-    color: #F4EFE3;
+  color: #F4EFE3;
 
-    font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 
-    font-size: 1rem;
+  font-size: 1rem;
 
-    letter-spacing: 0.1em;
+  letter-spacing: 0.1em;
 
-    text-transform: uppercase;
+  text-transform: uppercase;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background-color 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
 }
 
 .libraryCardForm button:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 
-    background-color: #4A3424;
+  background-color: #4A3424;
 
-    box-shadow:
-        0 5px 12px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    0 5px 12px rgba(0, 0, 0, 0.25);
 }
 
 
@@ -764,81 +783,81 @@ NEW BOOK PAGE STYLING
 ------------------------- */
 
 .libraryCardFooter {
-    position: relative;
+  position: relative;
 
-    display: flex;
+  display: flex;
 
-    justify-content: space-between;
+  justify-content: space-between;
 
-    margin-top: 3rem;
+  margin-top: 3rem;
 
-    padding-top: 1rem;
+  padding-top: 1rem;
 
-    border-top: 1px solid #B79C78;
+  border-top: 1px solid #B79C78;
 
-    font-size: 0.7rem;
+  font-size: 0.7rem;
 
-    letter-spacing: 0.12em;
+  letter-spacing: 0.12em;
 
-    color: #8B6B4A;
+  color: #8B6B4A;
 }
 
 
 /* EDIT FORM STYLING */
 .editFormActions {
-    display: flex;
+  display: flex;
 
-    justify-content: center;
+  justify-content: center;
 
-    gap: 1rem;
+  gap: 1rem;
 
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
 .editFormActions button {
-    padding: 0.8rem 1.5rem;
+  padding: 0.8rem 1.5rem;
 
-    border: 1px solid #6F4E37;
+  border: 1px solid #6F4E37;
 
-    border-radius: 2px;
+  border-radius: 2px;
 
-    background-color: #6F4E37;
+  background-color: #6F4E37;
 
-    color: #F4EFE3;
+  color: #F4EFE3;
 
-    font-family: "Times New Roman", Times, serif;
+  font-family: "Times New Roman", Times, serif;
 
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 
-    letter-spacing: 0.08em;
+  letter-spacing: 0.08em;
 
-    text-transform: uppercase;
+  text-transform: uppercase;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    transition:
-        transform 0.2s ease,
-        background-color 0.2s ease,
-        box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .editFormActions button:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 
-    background-color: #4A3424;
+  background-color: #4A3424;
 
-    box-shadow:
-        0 5px 12px rgba(0, 0, 0, 0.25);
+  box-shadow:
+    0 5px 12px rgba(0, 0, 0, 0.25);
 }
 
 .editFormActions .cancelButton {
-    background-color: transparent;
+  background-color: transparent;
 
-    color: #6F4E37;
+  color: #6F4E37;
 }
 
 .editFormActions .cancelButton:hover {
-    background-color: rgba(111, 78, 55, 0.08);
+  background-color: rgba(111, 78, 55, 0.08);
 
-    color: #4A3424;
+  color: #4A3424;
 }
