@@ -124,16 +124,32 @@ function BookDetails() {
     return (
         <div className="bookDetailsOverlay">
 
-            <div className="bookDetails">
+            <div className={isEditing ? "libraryCard" : "bookDetails"}>
 
                 {isEditing ? (
 
-                    <form onSubmit={handleUpdate}>
+                    <form
+                        className="libraryCardForm"
+                        onSubmit={handleUpdate}
+                    >
 
-                        <h1>Edit Book</h1>
+                        <header className="libraryCardHeader">
+
+                            <p className="libraryName">
+                                THE PERSONAL LIBRARY
+                            </p>
+
+                            <h1>
+                                Update Catalog Entry
+                            </h1>
+
+                            <div className="cardLine"></div>
+
+                        </header>
+
 
                         <label>
-                            Title:
+                            <span>Title</span>
 
                             <input
                                 type="text"
@@ -141,11 +157,13 @@ function BookDetails() {
                                 onChange={(event) =>
                                     setTitle(event.target.value)
                                 }
+                                required
                             />
                         </label>
-                        <br />
+
+
                         <label>
-                            Author:
+                            <span>Author</span>
 
                             <input
                                 type="text"
@@ -153,11 +171,12 @@ function BookDetails() {
                                 onChange={(event) =>
                                     setAuthor(event.target.value)
                                 }
+                                required
                             />
                         </label>
-                        <br />
-                        <label>
-                            Completed:
+
+
+                        <label className="completedField">
 
                             <input
                                 type="checkbox"
@@ -166,21 +185,31 @@ function BookDetails() {
                                     setCompleted(event.target.checked)
                                 }
                             />
+
+                            <span>
+                                Book has been completed
+                            </span>
+
                         </label>
 
-                        <button type="submit">
-                            Save
-                        </button>
 
-                        <button
-                            type="button"
-                            onClick={() => setIsEditing(false)}
-                        >
-                            Cancel
-                        </button>
+                        <div className="editFormActions">
+
+                            <button type="submit">
+                                Save Changes
+                            </button>
+
+                            <button
+                                type="button"
+                                className="cancelButton"
+                                onClick={() => setIsEditing(false)}
+                            >
+                                Cancel
+                            </button>
+
+                        </div>
 
                     </form>
-
                 ) : (
 
                     <>
