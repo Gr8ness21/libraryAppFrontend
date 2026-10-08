@@ -341,20 +341,41 @@ BOOK DETAILS STYLING
 ================================ */
 /* GOAL: book-like animation where the pages open to show details. */
 
-.bookDetails {
+/* .bookDetails {
   width: min(600px, 90%);
   margin: 2rem auto;
   padding: 2rem;
-
   border: 2px solid #F4EFE3;
   border-radius: 20px;
-
   background-color: #5F432F;
   color: #F4EFE3;
-
   font-family: "Times New Roman", Times, serif;
-
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+} */
+
+.bookDetails {
+    position: relative;
+    width: 450px;
+    min-height: 500px;
+    padding: 3rem;
+    border: 2px solid #F4EFE3;
+    border-radius: 8px;
+    background-color: #5F432F;
+    color: #F4EFE3;
+    font-family: "Times New Roman", Times, serif;
+    box-shadow:0 20px 50px rgba(0, 0, 0, 0.45);
+    transform-origin: left center;
+}
+
+.bookDetailsOverlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 100;
 }
 
 .bookDetails h1 {

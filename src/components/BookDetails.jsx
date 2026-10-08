@@ -122,105 +122,105 @@ function BookDetails() {
 
 
     return (
+        <div className="bookDetailsOverlay">
 
-        <div className="bookDetails">
+            <div className="bookDetails">
 
-            {isEditing ? (
+                {isEditing ? (
 
-                // EDIT MODE
-                <form onSubmit={handleUpdate}>
+                    <form onSubmit={handleUpdate}>
 
-                    <h1>Edit Book</h1>
+                        <h1>Edit Book</h1>
 
-                    <label>
-                        Title:
+                        <label>
+                            Title:
 
-                        <input
-                            type="text"
-                            value={title}
-                            onChange={(event) =>
-                                setTitle(event.target.value)
-                            }
-                        />
+                            <input
+                                type="text"
+                                value={title}
+                                onChange={(event) =>
+                                    setTitle(event.target.value)
+                                }
+                            />
+                        </label>
+                        <br />
+                        <label>
+                            Author:
 
-                    </label>
-<br />
-                    <label>
-                        Author:
+                            <input
+                                type="text"
+                                value={author}
+                                onChange={(event) =>
+                                    setAuthor(event.target.value)
+                                }
+                            />
+                        </label>
+                        <br />
+                        <label>
+                            Completed:
 
-                        <input
-                            type="text"
-                            value={author}
-                            onChange={(event) =>
-                                setAuthor(event.target.value)
-                            }
-                        />
+                            <input
+                                type="checkbox"
+                                checked={completed}
+                                onChange={(event) =>
+                                    setCompleted(event.target.checked)
+                                }
+                            />
+                        </label>
 
-                    </label>
-<br />
-                    <label>
-                        Completed:
-
-                        <input
-                            type="checkbox"
-                            checked={completed}
-                            onChange={(event) =>
-                                setCompleted(event.target.checked)
-                            }
-                        />
-
-                    </label>
-
-                    <button type="submit">
-                        Save
-                    </button>
-
-                    <button
-                        type="button"
-                        onClick={() => setIsEditing(false)}
-                    >
-                        Cancel
-                    </button>
-
-                </form>
-
-            ) : (
-
-                // VIEW MODE
-                <>
-                    <h1>{book.title}</h1>
-<hr />                    <p>
-                        <strong>Author:</strong> {book.author}
-                    </p>
-                    <p>
-                        <strong>Completed:</strong>{" "}
-                        {book.completed ? "Yes" : "No"}
-                    </p>
-                    <div className="bookActions">
-
-                        <button
-                            className="bookAction editAction"
-                            onClick={() => setIsEditing(true)}
-                            aria-label="Edit book"
-                        >
-                            <img src={editIcon} alt="" />
+                        <button type="submit">
+                            Save
                         </button>
 
                         <button
-                            className="bookAction deleteAction"
-                            onClick={handleDelete}
-                            aria-label="Delete book"
+                            type="button"
+                            onClick={() => setIsEditing(false)}
                         >
-                            <img src={deleteIcon} alt="" />
+                            Cancel
                         </button>
 
-                    </div>
-                </>
+                    </form>
 
-            )}
+                ) : (
+
+                    <>
+                        <h1>{book.title}</h1>
+
+                        <p>
+                            <strong>Author:</strong> {book.author}
+                        </p>
+
+                        <p>
+                            <strong>Completed:</strong>{" "}
+                            {book.completed ? "Yes" : "No"}
+                        </p>
+
+                        <div className="bookActions">
+
+                            <button
+                                className="bookAction editAction"
+                                onClick={() => setIsEditing(true)}
+                                aria-label="Edit book"
+                            >
+                                <img src={editIcon} alt="" />
+                            </button>
+
+                            <button
+                                className="bookAction deleteAction"
+                                onClick={handleDelete}
+                                aria-label="Delete book"
+                            >
+                                <img src={deleteIcon} alt="" />
+                            </button>
+
+                        </div>
+                    </>
+
+                )}
+
+            </div>
 
         </div>
-
     );
 }
 
